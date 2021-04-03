@@ -20,6 +20,6 @@ in
       description = "Arbitrary information";
     };
   };
-  dataToString = {data, ...}: ''"${data}"'';
+  dataToString = {data, ...}: ''"${toString builtins.split ".{255}" data}"'';
   fromString = data: { inherit data; };
 }
